@@ -8,33 +8,43 @@
 </head>
 <body>
     <div class="container">
+        <h2 style="text-align: center;">Exemplo de Carrossel</h2>
+        <br>
         <div class="row">
-            <div class="col-2">c</div>
+            <div class="col-2"></div>
             <div class="col-8">
-                <div id="carouselExample" class="carousel slide">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
                     <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="img/castelo-de-areia.jpg" class="d-block w-100" alt="...">
+                      <div class="carousel-item active">
+                        <img src="img/chama-violeta.jpg" class="d-block w-100" alt="Chama Violeta" height="345px">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/ressignificar.jpg" class="d-block w-100" alt="Ressignificar" height="345px">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/castelo-de-areia.jpg" class="d-block w-100" alt="Castelo de Areia" height="345px">
+                      </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/chama-violeta.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/ressignificar.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Anterior</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Próximo</span>
                     </button>
-                </div>
+                  </div>
             </div>
-            <div class="col-2">c</div>
+            <div class="col-2"></div>
         </div>
+        <br>
+        <footer style="text-align: center;">Desenvolvido pela aluna Natalí Alberton Grolli</footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>
