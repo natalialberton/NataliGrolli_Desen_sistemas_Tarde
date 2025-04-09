@@ -48,3 +48,9 @@ function data(variavel) {
     variavel = variavel.replace(/(\d{2})(\d)/,"$1/$2")
     return variavel
 }
+
+//Máscara Cartão SUS
+function CartaoSus(variavel) {
+    variavel = variavel.replace(/\D/g,"")
+    return variavel
+}
