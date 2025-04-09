@@ -1,0 +1,221 @@
+<!--**********************************-->
+<!--        FORMULARIO COMPLETO       -->
+<!--       NATALÍ ALBERTON GROLLI     -->
+<!--**********************************-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title> Como criar um formulário completo em HTML </title>
+  <meta name="description" content="Aprenda a criar um site completo que 
+    usa formulários em HTML">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="css/FormCompleto_NATALI_ALBERTON.css">
+  <script src="js/FormCompleto_NATALI_ALBERTON.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>NATALÍ ALBERTON GROLLI</h1>
+    <h2> Preencha o formulário abaixo para participar do curso de HTML &
+      CSS completo, Senai - Téc Desenv Sistemas</h2>
+  </header>
+  <form action="Script_do_Formulario.php" method="post">
+
+
+    <!-- DADOS PESSOAIS-->
+
+    <div class="container-dados">
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+        <table cellspacing="10">
+          <tr>
+            <td>
+              <label for="nome">Nome:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="email" onkeypress="mascara(this,nomePessoal)" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="sobrenome">Sobrenome:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="sobrenome" onkeypress="mascara(this,sobrenomePessoal)" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Nascimento:</label>
+            </td>
+            <td align="left">
+              <input type="date" name="nascimento" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="rg">RG:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="rg" onkeypress="mascara(this,rgPessoal)" size="14" maxlength="14" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>CPF:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="cpf" onkeypress="mascara(this,cpfPessoal)" size="14" maxlength="14" required>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </div>
+    <br>
+
+    <!-- ENDEREÇO -->
+
+    <div class="container-dados">
+      <fieldset>
+        <legend>Dados de Endereço</legend>
+        <table cellspacing="10">
+          <tr>
+            <td>
+              <label for="rua">Rua:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="rua" onkeypress="mascara(this,ruaEndereco)" required>
+            </td>
+            <td>
+              <label for="numero">Número:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="numero" onkeypress="mascara(this,numeroEndereco)" size="4" maxlength="4"
+                required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="bairro">Bairro:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="bairro" onkeypress="mascara(this,bairroEndereco)" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="estado">Estado:</label>
+            </td>
+            <td align="left">
+              <select name="estado">
+                <option value="ac">Acre</option>
+                <option value="al">Alagoas</option>
+                <option value="am">Amazonas</option>
+                <option value="ap">Amapá</option>
+                <option value="ba">Bahia</option>
+                <option value="ce">Ceará</option>
+                <option value="df">Distrito Federal</option>
+                <option value="es">Espírito Santo</option>
+                <option value="go">Goiás</option>
+                <option value="ma">Maranhão</option>
+                <option value="mt">Mato Grosso</option>
+                <option value="ms">Mato Grosso do Sul</option>
+                <option value="mg">Minas Gerais</option>
+                <option value="pa">Pará</option>
+                <option value="pb">Paraíba</option>
+                <option value="pr">Paraná</option>
+                <option value="pe">Pernambuco</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="cidade">Cidade:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="cidade" onkeypress="mascara(this,cidadeEndereco)" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="cep">CEP:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="cep" onkeypress="mascara(this,cepEndereco)" size="10" maxlength="12">
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </div>
+    <br>
+
+    <!-- DADOS DE LOGIN -->
+
+    <div class="container-dados">
+      <fieldset>
+        <legend>Dados de Login</legend>
+        <table cellspacing="10">
+          <tr>
+            <td>
+              <label for="email">E-mail:</label>
+            </td>
+            <td align="left">
+              <input type="email" name="email" required>
+            </td>
+          </tr>
+          <tr>
+          <tr>
+            <td>
+              <label for="telefone">Telefone:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="telefone" onkeypress="mascara(this,telefoneLogin)" size="13" maxlength="13"
+                required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="imagem">Imagem de Perfil:</label>
+            </td>
+            <td>
+              <input type="file" name="imagem" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="login">Login de Usuário:</label>
+            </td>
+            <td align="left">
+              <input type="text" name="login" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="pass">Senha:</label>
+            </td>
+            <td align="left">
+              <input type="password" name="pass" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="passconfirm">Confirme a senha:</label>
+            </td>
+            <td align="left">
+              <input type="password" name="passconfirm" required>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <br>
+    </div>
+    <div class="container-botao">
+      <input type="submit" class="botao" id="enviar" value="Enviar">
+      <input type="reset" class="botao" id="limpar" value="Limpar">
+    </div>
+  </form>
+</body>
+
+</html>
