@@ -7,7 +7,7 @@ driver = webdriver.Chrome()
 
 #Acesso a página de cadastro usando o caminho absoluto com o protocolo file://
 #Certifique-se de que o caminho está apontando para um arquivo HTML específico
-driver.get("file://C:\Users\natali_grolli\Documents\GitHub\NataliGrolli_Desen_sistemas_Tarde\TESTES\pratica1\index.html")
+driver.get("file:///C:\Users\natali_grolli\Documents\GitHub\NataliGrolli_Desen_sistemas_Tarde\TESTES\pratica1\index.html")
 
 #Preenche o campo Nome
 nome_input = driver.find_element(By.ID, "name")
