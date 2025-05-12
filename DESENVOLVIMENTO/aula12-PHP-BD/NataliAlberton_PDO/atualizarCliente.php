@@ -54,6 +54,7 @@ if($pk_cli && is_numeric($pk_cli)) {
     <?php else: ?>
         <form action="processarAtualizacao.php" method="POST">
             <input type="hidden" name="pk_cli" value="<?=htmlspecialchars($cliente[$pk_cliente])?>">
+            
             <label for="cli_nome">Nome: </label>
             <input type="text" name="cli_nome" id="cli_nome" value="<?=htmlspecialchars($cliente[$cli_nome])?>" readonly onclick="habilitarEdicao('cli_nome')">
             
