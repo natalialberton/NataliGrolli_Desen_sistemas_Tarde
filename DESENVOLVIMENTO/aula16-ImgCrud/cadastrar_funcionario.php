@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CADASTRAMENTO</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<?php
+
+include ('index.php');
+
+?>
+
     <main>
-        <div class="container-cadastro">
-            <h1>Cadastro</h1>
-            <h2>Funcionário</h2>
+        <div class="main-content">
+            <div class="titulo">
+                <h1>Cadastro</h1>
+                <h2>Funcionário</h2>
+            </div>
             <!--FORMULÁRIO PARA CADASTRAR FUNCIONÁRIO-->
-            <form class="forms-cadastro" action="salvar_funcionario.php" method="POST" enctype="multipart/form-data">
-            
+            <form class="forms-cadastro" action="salvar_funcionario.php" method="POST" enctype="multipart/form-data">  
                 <!--CAMPO PARA INSERIR O NOME DO FUNCIONÁRIO-->
                 <label class="forms-cadastro__label" for="nome">Nome: </label>
                 <input class="forms-cadastro__input" type="text" name="nome" id="nome" required><br>

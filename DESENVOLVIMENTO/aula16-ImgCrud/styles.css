@@ -13,6 +13,7 @@ body {
     width: 100%;
     min-height: 100vh;
     background-color: #f4f4f4;
+    font-family: Montserrat;
 }
 
 h1, h2, h3 {
@@ -76,6 +77,23 @@ h1, h2, h3 {
 }
 
 /* CADASTRAR FUNCIONÁRIO */
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 10px;
+}
+
 .forms-cadastro {
     background: white;
     padding: 20px;
@@ -115,10 +133,8 @@ h1, h2, h3 {
 
 h1 {
     font-size: 35px;
-    align-self: center;
 }
 
 h2 {
     font-size: 20px;
-    align-self: center;
 }
