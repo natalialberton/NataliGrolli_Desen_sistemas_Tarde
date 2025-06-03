@@ -41,39 +41,44 @@ try {
 				$stmt_excluir->execute(); 
 
                 // Redireciona para a página inicial após a exclusão
-                header("Location: consulta_funcionario.php");
+                header("Location: consultar_funcionario.php");
                 exit();
             }
-            ?>
-            <!DOCTYPE html>
-            <html lang="pt-br">
-            <head>
-                <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
-                <title>Visualizar Funcionário</title> <!-- Título da página -->
-            </head>
-            <body>
-                <h1>Dados do Funcionário</h1> <!-- Cabeçalho da página -->
-                <!-- Exibe os dados do funcionário -->
-                <p>Nome: <?= htmlspecialchars($funcionario['nome']) ?></p>
-                <p>Telefone: <?= htmlspecialchars($funcionario['telefone']) ?></p>
-                <p>Foto:</p>
-                <img src="data:<?= $funcionario['tipo_foto'] ?>;base64,<?= base64_encode($funcionario['foto']) ?>" alt="Foto do Funcionário"> <!-- Exibe a foto do funcionário -->
 
-                <!-- Formulário para excluir funcionário -->
-                <form method="POST">
-                    <input type="hidden" name="excluir_id" value="<?= $id ?>">
-                    <button type="submit">Excluir Funcionário</button>
-                </form>
+            $tituloPagina = 'FUNCIONÁRIO';
+            include ('menu.php');
+
+            ?>
+                <main> 
+                    <div class="container-dados">
+                        <h1 class="titulo-dados">Dados do Funcionário</h1> <!-- Cabeçalho da página -->
+                        <div class="conteudo-dados">
+                            <div class="conteudo-lado-esquerdo">
+                                <!-- Exibe os dados do funcionário -->
+                                <div class="dados-escritos">
+                                    <p>Nome: <?= htmlspecialchars($funcionario['nome']) ?></p>
+                                    <p>Telefone: <?= htmlspecialchars($funcionario['telefone']) ?></p>
+                                </div>
+                                <!-- Formulário para excluir funcionário -->
+                                <form action method="POST">
+                                    <input type="hidden" name="excluir_id" value="<?=$id ?>">
+                                    <button type="submit" class="container-dados__btn">Excluir Funcionário</button>
+                                </form>
+                            </div>
+                            <img src="data:<?= $funcionario['tipo_foto'] ?>;base64,<?= base64_encode($funcionario['foto']) ?>" alt="Foto do Funcionário"> <!-- Exibe a foto do funcionário -->
+                        </div>
+                    </div>
+                </main>
             </body>
             </html>
             <?php
         } else {
-            echo "Funcionário não encontrado."; // Mensagem exibida se o funcionário não for encontrado
+            echo "<script> alert('Funcionário não encontrado!') '</script>"; // Mensagem exibida se o funcionário não for encontrado
         }
     } else {
-        echo "ID do funcionário não foi fornecido."; // Mensagem exibida se o ID não for fornecido na URL
+        echo "<script> alert('ID do funcionário não foi fornecido!') </script>"; // Mensagem exibida se o ID não for fornecido na URL
     }
 } catch (PDOException $e) {
-    echo "Erro: " . $e->getMessage(); // Exibe a mensagem de erro se a conexão ou a consulta falhar
+    echo "<script> alert('Erro: ".$e->getMessage()."') </script>"; // Exibe a mensagem de erro se a conexão ou a consulta falhar
 }
 ?>

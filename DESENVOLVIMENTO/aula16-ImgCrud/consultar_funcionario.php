@@ -32,33 +32,33 @@ try {
     }
 
 } catch(PDOException $e) {
-    echo "Erro: ".$e-> getMessage();
+    echo "<script> alert('Erro: ".$e-> getMessage()."') </script>";
 }
+
+$tituloPagina = 'CONSULTA';
+include ('menu.php');
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONSULTA FUNCIONARIO</title>
-</head>
-<body>
-    <h1>Consulta de Funcionário</h1>
-    <ul>
-        <?php foreach($funcionarios as $funcionario) : ?>
-        <li>
-            <a href="visualizar_funcionario.php?id<? $funcionario['id'] ?>">
-                <?=htmlspecialchars($funcionario['nome'])?>
-            </a>
+<main>
+    <div class="main-content">
+        <h1>Consulta de Funcionário</h1>
+        <div class="container-consultas">
+            <ul class="container-consultas__ul">
+                <?php foreach($funcionarios as $funcionario) : ?>
+                <li class="container-consultas__item">
+                    <p><?=htmlspecialchars($funcionario['nome'])?></p>
+                    <a class="container-consultas__btn" href="visualizar_funcionario.php?id=<?=htmlspecialchars($funcionario['id']) ?>">Visualizar</a>
 
-            <form method="POST" style="display: inline;">
-                <input type="hidden" name="excluir_id" value="<?php $funcionario['id'] ?>">
-                <button type="submit">Excluir</button>
-            </form>
-        </li>
-        <?php endforeach; ?>
-    </ul>
+                    <form method="POST" style="display: inline;">
+                        <input type="hidden" name="excluir_id" value="<?=htmlspecialchars($funcionario['id']) ?>">
+                        <button type="submit" class="container-consultas__btn">Excluir</button>
+                    </form>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</main>
 </body>
 </html>

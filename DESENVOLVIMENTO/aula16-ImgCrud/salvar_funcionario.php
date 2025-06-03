@@ -62,30 +62,28 @@ try {
             $stmt-> bindParam(':foto', $foto, PDO::PARAM_LOB);
 
             if($stmt-> execute()) {
-                echo "Funcionário cadastrado com successo!";
+                echo "<script> alert('Funcionário cadastrado com successo!') </script>";
             } else {
-                echo "Erro ao cadastrar funcionário!";
+                echo "<script> alert('Erro ao cadastrar funcionário!') </script>";
             }
         } else {
-            echo "Erro ao fazer upload da foto! ".$_FILES['foto']['error'];
+            echo "<script> alert(Erro ao fazer upload da foto!') </script>".$_FILES['foto']['error'];
         }
     } 
 } catch(PDOException $e) {
     echo "Erro: ".$e-> getMessage();
 }
 
-?>
+$tituloPagina = 'LISTA';
+include ('menu.php');
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LISTA IMAGENS</title>
-</head>
-<body>
-    <h1>Lista de Imagens</h1>
-    <!--LINK PARA LISTAR FUNCIONARIOS-->
-    <a href="consultar_funcionario.php">Listar Funcionários</a>
+?>
+<main>
+    <div class="main-content">
+        <h1>Lista de Imagens</h1>
+        <!--LINK PARA LISTAR FUNCIONARIOS-->
+        <a href="consultar_funcionario.php">Listar Funcionários</a>
+    </div>
+</main>
 </body>
 </html>

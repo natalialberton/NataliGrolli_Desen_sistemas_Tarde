@@ -1,3 +1,4 @@
+/* IMPORTANDO FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
 
@@ -8,25 +9,48 @@
     box-sizing: border-box;
 }
 
-/* GERAL */
+/* ---------------- VARIÁVEIS PARA AS CORES ---------------- */
+:root {
+    --cor-primaria: #372411;
+    --cor-secundaria: #e0d8C8;
+    --cor-terciaria: #7a5938;
+    --cor-primaria-hover: #160f07;
+    --cor-secundaria-hover: white;
+    --cor-terciaria-hover: #584531;
+    --cor-destaque: #0097b2;
+    --cor-destaque-hover: #035e6e;
+}
+
+/* ---------------- GERAL ---------------- */
 body {
     width: 100%;
     min-height: 100vh;
-    background-color: #f4f4f4;
-    font-family: Montserrat;
+    background-color: var(--cor-secundaria-hover);
+    font-family: 'Montserrat';
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 15vh;
+    padding: 20px;
+    background-color: var(--cor-primaria);
 }
 
 h1, h2, h3 {
     font-family: 'Krona One', 'Montserrat', 'Arial';
 }
 
-/* MENU ESTILO DROPDOWN */
+.header__titulo,
+.titulo-dados {
+    color: var(--cor-secundaria)
+}
+
+/* ---------------- MENU ESTILO DROPDOWN ---------------- */
 .lista-nav {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
-    background-color: #333;
 }
 
 .item-lista-nav {
@@ -36,7 +60,7 @@ h1, h2, h3 {
 .item-lista-nav a,
 .dropbtn {
     display: inline-block;
-    color: white;
+    color: var(--cor-secundaria);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -44,7 +68,7 @@ h1, h2, h3 {
 
 .item-lista-nav a:hover,
 .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: var(--cor-primaria-hover);
 }
 
 .dropdown {
@@ -54,14 +78,14 @@ h1, h2, h3 {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: var(--cor-primaria);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
+    color: var(--cor-secundaria);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -69,17 +93,18 @@ h1, h2, h3 {
 }
 
 .dropdown-content a:hover {
-    background-color: yellow;
+    background-color: var(--cor-primaria-hover);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* CADASTRAR FUNCIONÁRIO */
+/* ---------------- CADASTRAR FUNCIONÁRIO ---------------- */
 main {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
+    margin-top: 25vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,40 +120,49 @@ main {
 }
 
 .forms-cadastro {
-    background: white;
+    background: var(--cor-primaria);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px var(--cor-primaria);
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     gap: 15px;
-    width: 300px;
+    width: 350px;
 }
 
 .forms-cadastro__label {
     font-weight: bold;
+    color: var(--cor-secundaria);
 }
 
 .forms-cadastro__input {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-terciaria-hover);
+    border: 1px solid var(--cor-primaria-hover);
     border-radius: 5px;
 }
 
-.forms-cadastro__btn-cadastrar {
-    background-color: #007bff;
-    color: white;
+.forms-cadastro__btn-cadastrar,
+.container-consultas__btn,
+.container-dados__btn {
+    background-color: var(--cor-destaque);
+    color: var(--cor-secundaria-hover);
     padding: 10px;
     font-size: 18px;
+    font-family: 'Montserrat';
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
-.btn-cadastrar:hover {
-    background-color: #0056b3;
+.forms-cadastro__btn-cadastrar:hover,
+.container-consultas__btn:hover,
+.container-dados__btn:hover {
+    background-color: var(--cor-destaque-hover);
 }
 
 h1 {
@@ -137,4 +171,60 @@ h1 {
 
 h2 {
     font-size: 20px;
+}
+
+/* ---------------- CONSULTAR FUNCIONÁRIO ---------------- */
+.container-consultas,
+.container-dados {
+    background: var(--cor-terciaria);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--cor-primaria-hover);
+    gap: 15px;
+    width: 600px;
+}
+
+.container-consultas__ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-consultas__item {
+    color: var(--cor-secundaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.container-consultas__item a {
+    text-decoration: none;
+}
+
+.container-consultas__item p {
+    font-size: 20px;
+    margin: 5px;
+}
+
+/* ---------------- VISUALIZAR FUNCIONÁRIO ---------------- */
+.conteudo-dados {
+    display: flex;
+    justify-content: space-around;
+}
+
+.conteudo-lado-esquerdo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dados-escritos {
+    gap: 10px;
+}
+
+.dados-escritos p {
+    font-weight: bold;
+    color: var(--cor-secundaria);
 }

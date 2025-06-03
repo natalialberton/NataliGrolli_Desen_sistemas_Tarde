@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>HOME</title>
+    <title><?php $tituloPagina ?></title>
 </head>
 <body>
     <header>
-        <h1>Empresa IMG</h1>
+        <h1 class="header__titulo">Empresa IMG</h1>
         <nav>
             <ul class="lista-nav">
-                <li class="item-lista-nav"><a href="index.html">HOME</a></li>
+                <li class="item-lista-nav"><a href="index.php">HOME</a></li>
                 <li class="item-lista-nav dropdown">
                     <a href="javascript:void(0)" class="dropbtn">FUNCIONÁRIOS</a>
                     <div class="dropdown-content">
